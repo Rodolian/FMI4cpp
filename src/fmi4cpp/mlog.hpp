@@ -62,7 +62,7 @@ mlog_level M_LOG_LEVEL = Info;
         {                                                                                                                                         \
             if (level >= M_LOG_LEVEL) {                                                                                                           \
                 auto time_now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());                                           \
-                __MLOG__("[" << to_string(level) << "] [" << std::ctime(&time_now) << "] " << __FILE__ << ":" << __LINE__ << ": " << msg, level); \
+                __MLOG__("[" << to_string(level) << "] [" << strtok(std::ctime(&time_now), "\n") << "] " << __FILE__ << ":" << __LINE__ << ": " << msg, level); \
             }                                                                                                                                     \
         }
 
